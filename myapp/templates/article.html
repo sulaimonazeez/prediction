@@ -1,0 +1,108 @@
+{% extends "header.html" %}
+{% load static %}
+{% block title %} Enjoy Your Daily Fottball Article {% endblock %}
+
+{% block header %} Daily Article {% endblock %}
+{% block content %}
+  <style>
+    .d-flex {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px
+    }
+    
+    .d-flex > a {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding: 5px;
+    }
+    .d-flex > a:hover {
+      color: green;
+    }
+    .uefa {
+      border-top: solid 4px lightgrey;
+      padding: 2px;
+      display: flex;
+    }
+    .uefa > img {
+      width: 6vw;
+    }
+    .uefa > * {
+      position: relative;
+      left: 2vw;
+    }
+    .uefa > p, span{
+      position: relative;
+      left: 5vw;
+      top: 0.7vw;
+    }
+    .uefa > span {
+      position: relative;
+      left: 7vw;
+    }
+    .match-listings {
+      display: flex;
+      justify-content: space-between;
+      border-top: solid 1px lightgrey;
+      padding: 5px;
+    }
+    .times {
+      position: relative;
+      left: 5vw;
+      font-weight: bold;
+      color: grey;
+      margin-top: 3vw;
+      
+    }
+    .my-teams {
+      position: relative;
+      left: -5vw;
+      position: ;
+    }
+    .fixing {
+      display: flex;
+      position: relative;
+    }
+    .fixing > div {
+      left: 20vw;
+    }
+    .mytip{
+      position: relative;
+      right: 3vw;
+      color: green;
+      border: solid 2px green;
+      border-radius: 0.5vw;
+      height: 6vw;
+      width: 8vw;
+      text-align: center;
+    }
+    .w-100 {
+      width:100%;
+    }
+    .mydaily {
+      margin-top: 7vw;
+    }
+    .my-article {
+      margin-top: 2vw;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+      margin-bottom: 7vw;
+      padding: 1.5vw;
+      border-radius: 2%;
+    }
+    .my_deco {
+      text-decoration: none;
+      color: black;
+    }
+</style>
+  <div class="container-fluid">
+  {% for data in my_article %}
+    <a class="my_deco" href="/article-capcha/{{data.id}}"><div class="my-article">
+      <img src="{{ data.image.url }}" alt="daily new" class="w-100 mydaily"/>
+      <h4>{{ data.title }}</h4>
+    </div>
+    </a>
+  {% endfor %}
+  </div>
+  <hr />
+{% endblock %}

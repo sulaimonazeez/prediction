@@ -1,0 +1,306 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <title>{% block title %} {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+     import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    .d-flex {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px
+    }
+    .bg-dark {
+      background-color: black;
+    }
+    .fa-bars {
+      color: green;
+      font-size: 30px;
+      margin-top: 2vw;
+      position: relative;
+      left: -1vw;
+      margin-top: 3vw;
+    }
+    .pr {
+      font-family: cursive;
+      color: green;
+      position: relative;
+      top: -2vw;
+    }
+    .title-bold {
+      font-weight: bold;
+    }
+    .d-flex > a {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding: 5px;
+    }
+    .d-flex > a:hover {
+      color: green;
+    }
+    .fixed-down {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      background-color: black;
+    
+    }
+    .bts {
+      display: flex;
+      justify-content: space-between;
+      border-top: 5px solid lightgrey;
+      border-bottom: 5px solid lightgrey;
+      width; 100%;
+      padding: 3vw;
+    }
+    .bts > a {
+      text-decoration: none;
+      color: black;
+    }
+    .bts > a:hover {
+      color: green;
+      font-weight: bold;
+    }
+    .form-input {
+      width: 100%;
+      border: none;
+      padding: 8px;
+      margin-bottom: 1vw;
+      border-radius: 2vw;
+    }
+    .submit-url {
+      padding: 0.5px;
+      background-color: lightgrey;
+    }
+    .uefa {
+      border-top: solid 4px lightgrey;
+      padding: 2px;
+      display: flex;
+    }
+    .uefa > img {
+      width: 6vw;
+    }
+    .uefa > * {
+      position: relative;
+      left: 2vw;
+    }
+    .uefa > p, span{
+      position: relative;
+      left: 5vw;
+      top: 0.7vw;
+    }
+    .uefa > span {
+      position: relative;
+      left: 7vw;
+    }
+    .match-listings {
+      display: flex;
+      justify-content: space-between;
+      border-top: solid 1px lightgrey;
+      padding: 5px;
+    }
+    .times {
+      position: relative;
+      left: 5vw;
+      font-weight: bold;
+      color: grey;
+      margin-top: 3vw;
+      
+    }
+    .my-teams {
+      position: relative;
+      left: -5vw;
+      position: ;
+    }
+    .fixing {
+      display: flex;
+      position: relative;
+    }
+    .fixing > div {
+      left: 20vw;
+    }
+    .mytip{
+      position: relative;
+      right:18vw;
+      white-space: nowrap;
+      border-radius: 0.5vw;
+      font-family: 'Roboto', Sans-Serif;
+      height: 6vw;
+      font-weight: bold;
+      color: green;
+      width: 8vw;
+      text-align: center;
+      margin-top: 2.8vw;
+    }
+    .myfooter {
+      margin-top: 15vw;
+    }
+    .term-condition {
+      display: flex;
+    }
+    .term-condition > a {
+      text-decoration: none;
+      color: grey;
+      padding: 2px;
+      margin: 2px;
+    }
+    .term-condition > a::after {
+        content: ""; /* Added content property */
+        display: block;
+        background-color: black;
+        height: 0.5vw;
+        width: 0.5vw;
+       border-radius: 50%;
+       position: relative;
+       top: -2.5vw;
+       left: -1vw;
+    }
+    .robot {
+      font-family: 'Roboto', sans-serif;
+    }
+    .navbar-default {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: none;
+    }
+    li > a {
+      font-size: 16px;
+    }
+    .navbar-brand {
+      position: relative;
+      left: 86%;
+      color: white;
+    }
+    .show {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @media only screen and (min-width:768px) {
+      .system-mobile {
+        padding: 18vw;
+        margin-top: -15vw;
+      }
+      .fixed-down {
+        display: none;
+        background-color: white;
+        
+      }
+      .fixed-down > a {
+        display: none;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <div>
+      <div class="bg-dark">
+       <nav class="d-flex">
+         <h2 class="pr">PR</h2>
+         <div><i class="mt-3 fa fa-bars"></i></div>
+       </nav>
+      </div>
+    </div>
+  <div class="system-mobile">
+    <div>
+      <div class="hides fixed-down d-flex">
+        <a href="/" style="color: green" class=""><i class="fa fa-home"></i><br/>Home</a>
+        <a href="/"><i class="fa fa-futbol-o"></i><br/>Football</a>
+        <a href="/dailyodds"><i class="fa fa-archive"></i><br/>Daily Odd</a>
+        <a href="/tennis"><i class="fa fa-futbol-o"></i><br/>Teniss</a>
+        <a href="/article"><i class="fa fa-book"></i><br/>Article</a>
+      </div>
+    </div>
+    <div class="">
+      <div class="container-fluid">
+        <h4 class="title-bold">{% block header %} {% endblock %} </h4>
+      </div>
+        <div class="bts">
+          <a style="color: green; font-weight:bold" href="/">Main Games</a>
+          <a href="#">Betting Tips</a>
+          <a href="#">1x2 Tips</a>
+          <a href="#">Over/Under 2.5</a>
+          <a href="#">Btts</a>
+        </div>
+        <form autocomplete="off" class="submit-url" method="post" action="/search">
+          {% csrf_token %}
+          <input class="form-input" type="text" placeholder="search country..." name="q" />
+        </form>
+          <nav class="navbar navbar-default bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><i class="fa fa-close"></i></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#
+      /">Home</a></li>
+      <li><a href="/">Football</a></li>
+      <li><a href="/tennis">Tennis</a></li>
+      <li><a href="/article">Artcle</a></li>
+      <li><a href="dailyodds">Daily Odd</a></li>
+    </ul>
+  </div>
+</nav>
+           <div>
+             {% block content %}
+             
+             {% endblock %}
+           </div>
+        </div>
+        <footer class="myfooter container-fluid">
+          <h5 style="font-weight: bold">FOOTBALL PREDICTIONS</h5>
+          <small class="robot" style="color: grey">
+            Football Predictions, free predictions previews for main and minor football leagues updates every day. Check out all of our winning 1x2 betting tips for today.
+Betting Tips Today is always up-to-date it provides mathematical football predictions generated by computer algorithm on the basis of statistics. We are best source of free football betting tips and football predictions and betting statistics, football results, football statistics and trends. We offer daily match betting previews and analysis for every major and minor league around the world. Whether you want predictions for today, tomorrow or any day of the week, we have you covered. For your convenience we also have a section dedicated to various bookmakers along with descriptions of their bonuses and other available features.
+Disclaimer:This website is intended solely for entertainment purposes. We provide football(soccer) content any betting advertisements or promotional content featured on this website are purely for informational and promotional purposes. We do not endorse or encourage online betting or gambling activities. We act solely as a publisher for these advertisements and do not have any control over the content or offers provided by the advertisers.
+          </small>
+          <br/><br/><h5 class="font-weight: bold">LINKS</h5>
+          <div class="term-condition">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Sitemap</a>
+            <a href="#">Mobile Apps</a>
+            <a href="https://www.facebook.com/profile.php?id=100094372373251">Contact Us</a>
+            
+          </div>
+          <div>
+            <small class="robot" style="color: grey; margin-top:7vw">+18 BeAwareGamble</small><br/><br/>
+            <small class="robot" style="color: grey; margin-top;5vw">@ 2024 Bettint Tips Today. All rights reserved.</small>
+          </div>
+        </footer>
+      <br/><br/><br />
+      </div>
+    <script>
+      let open = document.querySelector(".fa-bars");
+      let close = document.querySelector(".navbar-brand");
+      
+      open.addEventListener("click", () => {
+         let nav = document.querySelector(".navbar-default");
+         nav.classList.add("show");
+      });
+      close.addEventListener("click", () => {
+        let nav = document.querySelector(".navbar-default");
+        nav.classList.remove("show");
+      })
+
+        
+    </script>
+    <!-- daily 2 odds templates copyright @ 2024 -->
+  </body>
+</html>

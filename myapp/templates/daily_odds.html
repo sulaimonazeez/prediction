@@ -1,0 +1,76 @@
+{% extends "header.html" %}
+
+{% block title %} Sure Daily 2 Odda {% endblock %}
+
+{% block header %} Daily 2 Odds {% endblock %}
+{% block content %}
+  <style>
+    .d-flex {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px
+    }
+    .d-flex > a {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding: 5px;
+    }
+    .d-flex > a:hover {
+      color: green;
+    }
+    .match-listings {
+      display: flex;
+      justify-content: space-between;
+      border-top: solid 1px lightgrey;
+      padding: 5px;
+    }
+    .times {
+      position: relative;
+      left: 5vw;
+      font-weight: bold;
+      color: grey;
+      margin-top: 3vw;
+      
+    }
+    .my-teams {
+      position: relative;
+      left: -5vw;
+      position: ;
+    }
+    .fixing {
+      display: flex;
+      position: relative;
+    }
+    .fixing > div {
+      left: 20vw;
+    }
+    .mytip{
+      position: relative;
+      right:18vw;
+      white-space: nowrap;
+      border-radius: 0.5vw;
+      font-family: 'Roboto', Sans-Serif;
+      height: 6vw;
+      font-weight: bold;
+      color: green;
+      width: 8vw;
+      text-align: center;
+      margin-top: 2.8vw;
+    }
+  </style>
+     <div>
+      {% for data in daily_odds %}
+           <div class="match-listings">
+              <div class="fixing">
+                <p class="times">{{ data.odd.start }}</p>
+                <div class="my-teams">
+                   <p>{{ data.odd.home_team }}</p>
+                   <p>{{ data.odd.away_team }}</p>
+                </div>
+              </div>
+              <p class="mytip">{{data.my_prediction}}</p>
+          </div>
+        {% endfor %}
+      </div>
+{% endblock %}

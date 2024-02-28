@@ -1,0 +1,113 @@
+{% extends 'header.html' %}
+
+{% block title %} Welcome to Daily Sure Prediction {% endblock %}
+{% block header %}
+   Football Predictions
+{% endblock %}
+{% block content %}
+<style>
+    .d-flex {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px
+    }
+    
+    .d-flex > a {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding: 5px;
+    }
+    .d-flex > a:hover {
+      color: green;
+    }
+in-bottom: 1vw;
+      border-radius: 2vw;
+    }
+    .submit-url {
+      padding: 0.5px;
+      background-color: lightgrey;
+    }
+    .uefa {
+      border-top: solid 4px lightgrey;
+      padding: 2px;
+      display: flex;
+    }
+    .uefa > img {
+      width: 6vw;
+    }
+    .uefa > * {
+      position: relative;
+      left: 2vw;
+    }
+    .uefa > p, span{
+      position: relative;
+      left: 5vw;
+      top: 0.7vw;
+    }
+    .uefa > span {
+      position: relative;
+      left: 7vw;
+    }
+    .match-listings {
+      display: flex;
+      justify-content: space-between;
+      border-top: solid 1px lightgrey;
+      padding: 5px;
+    }
+    .times {
+      position: relative;
+      left: 5vw;
+      font-weight: bold;
+      color: grey;
+      margin-top: 3vw;
+      
+    }
+    .my-teams {
+      position: relative;
+      left: -5vw;
+      position: ;
+    }
+    .fixing {
+      display: flex;
+      position: relative;
+    }
+    .fixing > div {
+      left: 20vw;
+    }
+    .mytip{
+      position: relative;
+      right: 3vw;
+      color: green;
+      border: solid 2px green;
+      border-radius: 0.5vw;
+      height: 6vw;
+      width: 8vw;
+      text-align: center;
+    }
+    .style-id {
+      text-decoration: none;
+      color: black;
+    }
+</style>
+  {% for country, matches in matches_by_country.items %}
+    <div class="uefa">
+      <img src={{country.country_image.url}}/>
+      <p>{{ country.country_name }}</p><span>({{ matches|length }}) match</span>
+      </div>
+            
+      {% for match in matches %}
+        <a class="style-id" href="/{{ match.id }}"><div class="match-listings">
+          <div class="fixing">
+             <p class="times">{{ match.start }}</p>
+            <div class="my-teams">
+              <p>{{ match.home_team }}</p>
+              <p>{{ match.away_team }}</p>
+            </div>
+        </div>
+        <p class="mytip">Tips</p>
+      </div>
+      </a>
+    {% endfor %}
+  {% endfor %}
+{% endblock %}
