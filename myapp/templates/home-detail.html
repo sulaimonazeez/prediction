@@ -130,7 +130,7 @@
     <div class="card">
       <small>{{ matches.home_team }} vs {{ matches.away_team }}</small>
       <div class="coustom-flex">
-        <img class="home-away" src={{ matches.home_logo.url }} alt="home" />
+        <img class="home-away" src="{{ matches.home_logo.url }}" alt="home" />
         <div class="start_time">
           <h4 class="">{{ matches.start|date:"j, M" }}</h4>
           <p>{{ matches.start|date:"j, M" }}</p>

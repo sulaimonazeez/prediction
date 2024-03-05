@@ -6,7 +6,7 @@ class MyFirstOne(sitemaps.Sitemap):
   priority = 0.9
   
   def items(self):
-    return Country.objects.all()
+    return Country.objects.all().order_by("country_image")
   
   def lastmod(self, obj):
     return obj.country_image
@@ -17,7 +17,7 @@ class MySecondOne(sitemaps.Sitemap):
   priority = 0.9
   
   def items(self):
-    return Match.objects.all()
+    return Match.objects.all().order_by("start")
     
   def lastmod(self, obj):
     return obj.start
@@ -28,7 +28,7 @@ class MyThirdOne(sitemaps.Sitemap):
   priority = 0.9
   
   def items(self):
-    return Daily.objects.all()
+    return Daily.objects.all().order_by("my_prediction")
     
   def lastmod(self, obj):
     return obj.my_prediction
@@ -38,7 +38,7 @@ class MyFourthOne(sitemaps.Sitemap):
   priority = 0.9
   
   def items(self):
-    return MyCountry.objects.all()
+    return MyCountry.objects.all().order_by("country_image")
     
   def lastmod(self, obj):
     return obj.country_image
@@ -49,7 +49,7 @@ class MyFifthOne(sitemaps.Sitemap):
   priority = 0.9
   
   def items(self):
-    return MyMatch.objects.all()
+    return MyMatch.objects.all().order_by("start")
     
   def lastmod(self, obj):
     return obj.start
@@ -60,7 +60,7 @@ class MySixtyOne(sitemaps.Sitemap):
   priority = 0.9
   
   def items(self):
-    return Article.objects.all()
+    return Article.objects.all().order_by("publish_date")
     
   def lastmod(self, obj):
     return obj.publish_date

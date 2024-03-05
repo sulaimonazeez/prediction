@@ -4,7 +4,7 @@ from django.contrib.sitemaps.views import sitemap
 from .sitemap import MyFirstOne,MySecondOne,MyThirdOne,MyFourthOne,MyFifthOne,MySixtyOne
 
 sitemaps = {
-    'counrty': MyFirstOne,
+    'country': MyFirstOne,
     'match': MySecondOne,
     'daily': MyThirdOne,
     "tennis_country": MyFourthOne,
